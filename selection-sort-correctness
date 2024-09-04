@@ -1,0 +1,22 @@
+Sorting Selection Algorithm Overview: The input list is split into two halves by Selection Sort: the sorted (originally empty) portion and the unsorted portion. 
+The algorithm grows the sorted portion by one element at a time by finding the smallest element in the unsorted portion and replacing it with the first element in the unsorted portion.
+
+Loop Invariant:
+A loop invariant is a condition that holds true before and after each iteration of a loop. For Selection Sort, we can define the following loop invariant:
+
+Invariant: Every member in the subarray from the start of the list to i-1 (i.e., array[0:i]) is equal to or less than every element in the subarray from i to the end of the list. 
+This subarray is sorted at the start of each iteration of the outer loop (indexed by i).
+
+Initialization: The sorted section (array[0:0]) is empty prior to the first iteration (i = 0), which fulfills the loop invariant in a basic way. The array is unsorted throughout.
+
+Maintenance: Before iteration 'i' begins, assume that the loop invariant is true. In the unsorted section array[i:n], the method locates the smallest element and replaces it with array[i]. 
+Following this procedure:
+The array[0:i+1] subarray is sorted.
+Because the lowest element of the unsorted section was positioned at index i, every element in array[0:i+1] is smaller than or equal to every element in the subarray array[i+1:n].
+As a result, the loop invariant is preserved.
+
+Termination: The loop ends when i = n-1, at which point array[0:n-1] is the sorted portion of the array and there is only one element left in the unsorted portion. 
+The entire array array[0:n] is sorted upon termination as array[n-1] is the largest element and the loop invariant ensures that array[0:n-1] is sorted.
+
+Conclusion: We may conclude that Selection Sort is accurate for every input list because the loop invariant is true at initialization, 
+maintained throughout the loop, and ensures a sorted array at termination.
